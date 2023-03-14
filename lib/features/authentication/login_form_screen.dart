@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../constants/gaps.dart';
 import '../../constants/sizes.dart';
+import '../onboarding/interests_screen.dart';
 import 'widgets/form_button.dart';
 
 class LoginFormScreen extends StatefulWidget {
@@ -19,6 +20,10 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
     if (_formKey.currentState != null) {
       if (_formKey.currentState!.validate()) {
         _formKey.currentState!.save();
+
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const InterestsScreen(),
+        ));
       }
     }
   }
